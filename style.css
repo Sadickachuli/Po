@@ -1,4 +1,4 @@
-/* General Styles */
+/* General Styles for the whole body*/
 body {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body {
     background-image: url("/images/sky.jpg");
     background-position: center;
     background-size: contain;
-    color: white;
+    color: black;
     font-family: 'Roboto', sans-serif;
     font-family: 'Saira Condensed', sans-serif;
     height: 100%;
@@ -18,7 +18,7 @@ header {
     left: 0;
     width: 100%;
     margin-top: -40px;
-    height: 80px; /* Adjust the height as needed */
+    height: 80px; 
     background-size: cover;
     background-position: center;
   }
@@ -76,15 +76,15 @@ header {
     color: white;
 }
 
-/* Second Horizontal Layout (Images with Text) Styles */
+/* Second Horizontal Layout (Images with Texts) Styles */
 #content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     background-image: url("/images/section-image.png");
     margin-top: 690px;
-    max-height: 500vh; /* Set a maximum height that fits within the viewport height */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds the container height */
+    max-height: 500vh; 
+    overflow-y: auto; 
   }
   
   .skills,
@@ -137,7 +137,7 @@ header {
   }
  
   .text-box {
-    background-color: white;
+    background-color:blueviolet;
   }
 
   .text-name {
@@ -148,6 +148,36 @@ header {
     width: 200px;
   }
 
+  /* skills with their `bars */
+.skill-bar {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.skill-name {
+  flex: 1;
+  font-weight: bold;
+  color: black;
+}
+
+.skill-bar-container {
+  flex: 2;
+  height: 20px;
+  background-color: black;
+  border-radius: 10px;
+  position: relative;
+}
+
+.skill-level {
+  height: 100%;
+  border-radius: 10px;
+  background-color: #3498db; 
+  width: 0;
+  transition: width 0.5s; 
+}
+
+  
 /* Third Horizontal Layout (Footer) Styles */
 footer {
     background-color: orangered; 
@@ -190,3 +220,63 @@ footer {
   .text-box {
     display: none;
   }
+  
+
+  /* media query for smaller screens */
+@media (max-width: 768px) {
+  .header-content {
+      padding: 10px;
+  }
+
+  .navigation ul {
+      flex-direction: column;
+  }
+
+  .navigation li {
+      margin-right: 0;
+      margin-bottom: 10px;
+  }
+
+  
+}
+/* This is for screens between 768px and 1200px like tablets and medium-sized desktops) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  header {
+      height: 80px;
+  }
+
+  .header-content {
+      padding: 20px;
+  }
+
+  .navigation ul {
+      margin-right: 20px;
+  }
+
+  /* Skills, experience, education, and projects layout adjustments */
+  #content {
+      flex-wrap: wrap;
+  }
+
+  .skills,
+  .experience,
+  .education,
+  .projects {
+      flex: 0 0 calc(50% - 40px);
+  }
+}
+
+/* media query for bigger screens */
+@media (min-width: 1200px) {
+  header {
+      height: 100px;
+  }
+
+  .header-content {
+      padding: 20px;
+  }
+
+  .navigation ul {
+      margin-right: 20px;
+  }
+}
